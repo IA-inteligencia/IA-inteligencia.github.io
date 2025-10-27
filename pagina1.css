@@ -1,0 +1,105 @@
+/* Menú base */
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ocultar checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo del botón "Menú" (menos brillo) */
+.menu-icon {
+  font-size: 18px;
+  color: black;
+  background-color: #7ddcff; /* celeste suave */
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.menu-icon:hover {
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+}
+
+/* Lista oculta por defecto */
+.menu-list {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  display: none;
+  text-align: left; /* ← aquí cambiamos a izquierda */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+}
+
+/* Mostrar lista cuando el checkbox está activado */
+#menu-toggle:checked + .menu-icon + .menu-list {
+  display: block;
+}
+
+/* Estilo de los enlaces */
+.menu-list li a {
+  display: block;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: left; /* ← forzamos alineación izquierda */
+}
+
+.menu-list li:last-child a {
+  border-bottom: none;
+}
+
+.menu-list li a:hover {
+  background: linear-gradient(90deg, #8360c3, #2ebf91);
+  color: #fff;
+  box-shadow: inset 0 0 8px #2ebf91;
+  border-radius: 5px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .menu-icon {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .menu-list li a {
+    padding: 10px 14px;
+  }
+}
+
+/*...............................................................................*/
+
+.texto-lit {
+  color: #ffffff; 
+  text-shadow:
+    0 0 10px #00eaff;
+  animation: brillo 1s infinite alternate;
+}
+
+@keyframes brillo {
+  0% {
+    text-shadow:
+      0 0 50px #00eaff;
+      
+  }
+  100% {
+    text-shadow:
+      0 0 20px #00eaff;
+
+  }
+}
